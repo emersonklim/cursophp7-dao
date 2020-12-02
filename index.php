@@ -30,13 +30,17 @@ require_once ("config.php");
 //$usuario->insert();
 
 //fazendo update do usuario
-$usuario = new Usuario();
-
-$usuario->loadByid(3);
-
-$usuario->update("helio", "helio@gmail", "123");
+//$usuario = new Usuario();
+//$usuario->loadByid(3);
+//$usuario->update("helio", "helio@gmail", "123");
 
 //$sql = new Sql();
 //$usuarios = $sql->select("select * from login");
 //echo json_encode($usuarios);
 
+
+$usuario = new Usuario();
+$usuario->loadByid(2);
+$usuario->delete();
+
+echo $usuario;

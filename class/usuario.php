@@ -118,6 +118,19 @@ class Usuario {
             "n"=> $this->getNome(), "e"=> $this->getEmail(), "s"=> $this->getSenha(), "id"=> $this->getIdlogin()
         ));
     }
+    
+    public function delete(){
+        
+        $sql = new Sql();
+        $sql->query("delete from login where login_id = :id", array(
+            ":id"=> $this->getIdlogin()
+        ));
+        
+        $this->setIdlogin(0);
+        $this->setNome("");
+        $this->setEmail("");
+        $this->setSenha("");
+    }
 
     public function __toString() {
 
